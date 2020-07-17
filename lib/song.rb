@@ -25,9 +25,7 @@ class Song
   end
   
   def self.create_by_name(name)
-    song = Song.new
-    song.name = name
-    self.all << song
+    self.all << self.new_by_name(song)
     song
   end
   
@@ -53,5 +51,9 @@ class Song
     song.artist_name = data[0]
     song.name = data[1]
     song
+  end
+  
+  def self.create_from_filename(filename)
+    
   end
 end
